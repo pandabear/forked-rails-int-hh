@@ -6,6 +6,8 @@ class Book < ActiveRecord::Base
   validates_with IsbnValidator
   
   has_many :reservations
+  has_many :taggings
+  has_many :tags, through: :taggings
   
   def reservation
     self.reservations.where(state: 'reserved').first
@@ -23,6 +25,17 @@ class Book < ActiveRecord::Base
   def self.search_by_title(value)
     self.where("title LIKE ?", "%#{value}%").order(
          "title asc, created_at desc")
+  end
+  
+  
+  def tag_with(tag_name)
+    if tags.where(name: tag_name).empty?
+      tag = Tag.find_or_create_by_name(tag_name)
+      tags << tag
+      tag
+    else
+      nil
+    end
   end
 
 
