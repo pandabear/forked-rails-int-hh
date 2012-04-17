@@ -19,6 +19,19 @@
       <span id="taggings">
         <%= render @book.tags %>
       </span>
+      <a href="#" id="new-tag-link" data-skip-pjax>
+          <i class="icon-plus"></i>
+          New tag
+      </a>
+      <%=
+        form_tag book_tags_path(@book),
+        id: 'new-tag-form', remote: true, data: {type: :json} do
+      %>
+        <%=
+          text_field_tag :name, "", id: 'new-tag-name',
+          placeholder: 'Enter tag name', style: 'display: none;'
+        %>
+      <%  end %>
     </div>
 
     <%= link_to "Edit", edit_book_path(@book), class: 'btn' %>

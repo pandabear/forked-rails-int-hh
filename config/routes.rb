@@ -12,8 +12,11 @@ Library::Application.routes.draw do
         put :free
       end
     end
+    resources :tags
   end
   
+  resources :tags, only: [:show]
+
   root :to => 'books#index'
 
 end
