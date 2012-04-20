@@ -107,4 +107,25 @@ class BooksControllerTest < ActionController::TestCase
     assert assigns(:books).include?(@search_book)
   end
 
+  test "new book with ISBN" do
+    book_from_google = Book.new
+    GoogleBooksClient.expects(:get).with("1234").returns(book_from_google)
+  
+    get :new, isbn: "1234"
+  
+    assert_response :success
+    assert assigns(:book)
+    assert_equal book_from_google, assigns(:book)
+  end
+
+  test "new book with ISBN when not found" do
+    GoogleBooksClient.expects(:get).with("1234").returns(nil)
+  
+    get :new, isbn: "1234"
+  
+    assert_response :success
+    assert assigns(:book)
+    assert flash[:error]
+  end
+
 end
