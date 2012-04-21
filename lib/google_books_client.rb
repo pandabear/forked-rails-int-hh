@@ -19,7 +19,8 @@ class GoogleBooksClient
       return Book.new(title: volume_info["title"],
                       description: volume_info["description"],
                       authors: volume_info["authors"].join(", "),
-                      isbn: volume_info["industryIdentifiers"][0]["identifier"])
+                      isbn: volume_info["industryIdentifiers"][0]["identifier"],
+                      cover_url: volume_info["imageLinks"]["thumbnail"])
     else
       return nil
     end

@@ -10,7 +10,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # Heroku needed gems
 gem 'heroku'
 gem 'execjs'
-# gem 'therubyracer'
+gem 'therubyracer'
 gem 'jquery-rails'
 gem 'pjax_rails', :git => 'git://github.com/rails/pjax_rails.git'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :branch => 'static'

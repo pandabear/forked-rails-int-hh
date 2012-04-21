@@ -6,6 +6,11 @@
     	by <%= @book.authors %>
     </p>
 
+    <% if @book.cover_url %>
+    <p>
+      <img src="<%= @book.cover_url %>" alt="<%= @book.title %>" />
+    </p>
+    <% end %>
     <p>
     	ISBN: <%= @book.isbn %>
     </p>
