@@ -18,6 +18,10 @@ class UsersControllerTest < ActionController::TestCase
         assert_response :redirect
         assert_redirected_to root_path
         assert flash[:notice]
+
+        welcome_email = ActionMailer::Base.deliveries.last
+        assert welcome_email
+        assert_equal ['jane@company.com'], welcome_email.to
       end
     end
     

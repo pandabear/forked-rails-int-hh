@@ -1,0 +1,15 @@
+common: &common_settings
+  from_email: Eficode Library <no-reply@library.eficode.com>
+  smtp_username: eficode.academy@gmail.com
+  smtp_password: super_fisu_with_fisu_in_english_and_no_underscore
+
+production:
+  <<: *common_settings
+  host: library.eficode.com
+
+development: &non_production_settings
+  <<: *common_settings
+  host: localhost:3000
+
+test:
+  <<: *non_production_settings

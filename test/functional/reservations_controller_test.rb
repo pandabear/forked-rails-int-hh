@@ -16,6 +16,10 @@ class ReservationsControllerTest < ActionController::TestCase
       assert_response :redirect
       assert_redirected_to book_path(@book)
       assert flash[:notice]
+
+      reservation_confirmation_email = ActionMailer::Base.deliveries.last
+      assert reservation_confirmation_email
+      assert_equal [@user.email], reservation_confirmation_email.to
     end
   end
   

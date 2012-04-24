@@ -5,6 +5,7 @@ class ReservationsController < ApplicationController
     @reservation = @book.reservations.new(user: current_user)
     if @reservation.save
       flash[:notice] = "Book reserved"
+      UserMailer.reservation_confirmation(@reservation).deliver
       respond_to do |format|
         format.html { redirect_to book_path(@book) }
         format.json { render json: @reservation.to_json(include: :user) }
