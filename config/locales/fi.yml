@@ -1,7 +1,14 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+fi:
+  activerecord:
+    errors:
+      models:
+        book:
+          attributes:
+            title:
+              taken:  "(T.T)"
   books:
     index:
-      search_button_placeholder: "Search by title"
+      search_button_placeholder: "(^^,)~~"
