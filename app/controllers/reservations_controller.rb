@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
     @book = Book.find(params[:book_id])
     @reservation = @book.reservations.new(user: current_user)
     if @reservation.save
-      flash[:notice] = "Book reserved"
+      flash[:notice] = t('.flash.notice.reserved_book')
       UserMailer.reservation_confirmation(@reservation).deliver
       respond_to do |format|
         format.html { redirect_to book_path(@book) }
@@ -20,9 +20,9 @@ class ReservationsController < ApplicationController
     @reservation = @book.reservations.where(id: params[:id], user_id: current_user.id).first
    
     if @reservation && @reservation.free
-      flash[:notice] = "Book is no longer reserved"
+      flash[:notice] = t('.flash.notice.released_book')
     else
-      flash[:error]  = "Something went wrong"
+      flash[:error]  = t('.flash.error.release_book_fail')
     end
     redirect_to book_path(@book)
   end

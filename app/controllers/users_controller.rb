@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       UserMailer.welcome_email(@user).deliver
-      flash[:notice] = "Welcome!"
+      flash[:notice] = t('.flash.notice.sign_up_success')
       redirect_to root_path
     else
       render :new

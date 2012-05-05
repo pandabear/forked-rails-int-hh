@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      flash[:error] = "Email or password is invalid"
+      flash[:error] = t('.flash.error.login_fail')
       render :new
     end
   end
