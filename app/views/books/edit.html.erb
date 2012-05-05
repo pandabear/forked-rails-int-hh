@@ -1,3 +1,3 @@
-<h1>Edit <%= @book.title%></h1>
+<h1><%= t('.edit', title: @book.title) %></h1>
 
 <%= render partial: 'form' %>

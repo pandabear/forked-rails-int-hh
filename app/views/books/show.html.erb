@@ -12,7 +12,7 @@
     </p>
     <% end %>
     <p>
-    	ISBN: <%= @book.isbn %>
+    	<%= t('.isbn') %> <%= @book.isbn %>
     </p>
 
     <p>
@@ -20,13 +20,13 @@
     </p>
     
     <div id="taggings-container">
-      Tags: 
+      <%= t('.tags') %> 
       <span id="taggings">
         <%= render @book.tags %>
       </span>
       <a href="#" id="new-tag-link" data-skip-pjax>
           <i class="icon-plus"></i>
-          New tag
+          <%= t('.new_tag') %>
       </a>
       <%=
         form_tag book_tags_path(@book),
@@ -34,20 +34,20 @@
       %>
         <%=
           text_field_tag :name, "", id: 'new-tag-name',
-          placeholder: 'Enter tag name', style: 'display: none;'
+          placeholder: t('.new_tag_name'), style: 'display: none;'
         %>
       <%  end %>
     </div>
 
-    <%= link_to "Edit", edit_book_path(@book), class: 'btn' %>
-    <%= link_to "Delete", book_path, method: :delete, class: 'btn btn-danger', confirm: 'Are you sure?' %>
+    <%= link_to t('.edit'), edit_book_path(@book), class: 'btn' %>
+    <%= link_to t('.delete'), book_path, method: :delete, class: 'btn btn-danger', confirm: t('.ask_confirmation') %>
     <p>
-      <%= link_to "Back to list", books_path %>
+      <%= link_to t('.back_to_list'), books_path %>
     </p>
   </div>
   
   <div class="span4 well reservation-box">
-    <h2>Reservation</h2>
+    <h2><%= t('.reservation') %></h2>
     <div id="reservation-status">
       <%= render partial: "reservation_status", locals: {reservation: @book_reservation} %>
     </div>
@@ -58,5 +58,3 @@
     </div>
   </div>
 </div>
-
-

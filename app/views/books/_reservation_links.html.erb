@@ -1,7 +1,7 @@
 <% if reservation %>
   <% if reservation.user == current_user %>
-    <%= link_to "Free", free_book_reservation_path(book, reservation), method: :put, class: 'btn' %>
+    <%= link_to t('.reservation.free'), free_book_reservation_path(book, reservation), method: :put, class: 'btn' %>
   <% end %>
 <% else %>
-  <%= link_to "Reserve", book_reservations_path(book), class: 'btn reserve-link', remote: true, data: {type: :json}, method: :post %>
+  <%= link_to t('.reservation.reserve'), book_reservations_path(book), class: 'btn reserve-link', remote: true, data: {type: :json}, method: :post %>
 <% end %>

@@ -5,3 +5,66 @@ en:
   books:
     index:
       search_button_placeholder: "Search by title"
+      search_text: "Search"
+      add_book: "Add a book"
+    list:
+      no_books_found: "Sorry, we haven't found any books!"
+    show:
+      isbn: "ISBN:"
+      tags: "Tags:"
+      new_tag: "New tag"
+      new_tag_name: "Enter tag name"
+      ask_confirmation: "Are you sure?"
+      edit: "Edit"
+      delete: "Delete"
+      back_to_list: "Back to list"
+      reservation: "Reservation"
+    reservation_status:
+      reservation:
+        status_free: "Free"
+        status_reserved: "Reserved by %{email}"
+    reservation_links:
+      reservation:
+        reserve: "Reserve"
+        free: "Free"
+    new:
+      new_book: "New Book"
+      find_by_isbn: "Find by ISBN"
+      isbn: "ISBN:"
+      find: "Find"
+    edit:
+      edit: "Edit %{title}"
+    form:
+      book_save_failed: "Failed to save book"
+      title: "Title"
+      authors: "Authors"
+      isbn: "ISBN"
+      cover_url: "Cover URL"
+      description: "Description"
+      save: "Save"
+      cancel: "Cancel"
+  tags:
+    show:
+      tagged_with: "Books tagged with %{tag}"
+  reservations:
+    form:
+      reservation_create_failed: "Failed to create reservation book"
+      email: "Email:"
+      save: "Save"
+      or: "or"
+      cancel: "Cancel"
+  sessions:
+    new:
+      log_in: "Log In"
+      email: "Email:"
+      password: "Password:"
+      submit: "Log in"
+  users:
+    new:
+      sign_up_fail: "Please check the following information"
+      sign_up: "Sign Up"
+      email: "Email:"
+      password: "Password:"
+      password_repeat: "Password confirmation:"
+      submit: "Sign up"
+      

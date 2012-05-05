@@ -1,16 +1,16 @@
-<h1>Log In</h1>
+<h1><%= t('.log_in') %></h1>
 
 <%= form_tag session_path do %>
 
   <fieldset>
     <div class="clearfix">
-      <label>Email:</label>
+      <label><%= t('.email') %></label>
       <div class="input">
         <%= text_field_tag :email, params[:email] %>
       </div>
     </div>
     <div class="clearfix">
-      <label>Password:</label>
+      <label><%= t('.password') %></label>
       <div class="input">
         <%= password_field_tag :password %>
       </div>
@@ -18,7 +18,7 @@
   </fieldset>
     
   <div class="actions">
-    <%= submit_tag "Log in", class: 'btn primary' %>
+    <%= submit_tag t('.submit'), class: 'btn primary' %>
   </div>
 
 <% end %>

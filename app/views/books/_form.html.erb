@@ -2,7 +2,7 @@
   
   <% unless @book.errors.empty? %>
     <div class='alert alert-block alert-error'>
-      <h2 class='alert-heading'>Failed to save book</h2>
+      <h2 class='alert-heading'><%= t('.book_save_failed') %></h2>
       <% @book.errors.full_messages.each do |msg| %>
         <p><%= msg %></p>
       <% end %>
@@ -11,7 +11,7 @@
 
   <fieldset>
     <div class='control-group'>
-      <label class='control-label' for="title">Title</label>
+      <label class='control-label' for="title"><%= t('.title') %></label>
       <div class='controls'>
         <%= f.text_field :title %>
       </div>
@@ -19,7 +19,7 @@
   
   <fieldset>
     <div class='control-group'>
-      <label class='control-label' for="authors">Authors</label>
+      <label class='control-label' for="authors"><%= t('.authors') %></label>
       <div class='controls'>
         <%= f.text_field :authors %>
       </div>
@@ -27,7 +27,7 @@
   
   <fieldset>
     <div class='control-group'>
-      <label class='control-label' for="isbn">ISBN</label>
+      <label class='control-label' for="isbn"><%= t('.isbn') %></label>
       <div class='controls'>
         <%= f.text_field :isbn %>
       </div>
@@ -35,7 +35,7 @@
 
   <fieldset>
     <div class='control-group'>
-      <label class='control-label' for="cover_url">Cover URL</label>
+      <label class='control-label' for="cover_url"><%= t('.cover_url') %></label>
       <div class='controls'>
         <%= f.text_field :cover_url %>
       </div>
@@ -43,7 +43,7 @@
 
   <fieldset>
     <div class='control-group'>
-      <label class='control-label' for="description">Description</label>
+      <label class='control-label' for="description"><%= t('.description') %></label>
       <div class='controls'>
         <%= f.text_field :description %>
       </div>
@@ -51,9 +51,9 @@
 
   <fieldset>
     <div class='controls'>
-      <%= f.submit "Save", class: 'btn-primary' %>
+      <%= f.submit t('.save'), class: 'btn-primary' %>
       or
-      <%= link_to "Cancel", books_path %>
+      <%= link_to t('.cancel'), books_path %>
     </div>
   </fieldset>
   
