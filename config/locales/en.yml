@@ -14,7 +14,18 @@ en:
       reserved_book: "Book reserved"
       released_book: "Book is no longer reserved"
       sign_up_success: "Welcome!"
-      
+
+  layouts:
+    application:
+      title: "Library"
+
+  application:
+    navbar:
+      link_button: "Library"
+      link_login: "Log in"
+      link_logout: "Log out"
+      link_signup: "Sign up"
+
   books:
     index:
       search_button_placeholder: "Search by title"
@@ -56,9 +67,11 @@ en:
       description: "Description"
       save: "Save"
       cancel: "Cancel"
+
   tags:
     show:
       tagged_with: "Books tagged with %{tag}"
+
   reservations:
     form:
       reservation_create_failed: "Failed to create reservation book"
@@ -66,12 +79,14 @@ en:
       save: "Save"
       or: "or"
       cancel: "Cancel"
+
   sessions:
     new:
       log_in: "Log In"
       email: "Email:"
       password: "Password:"
       submit: "Log in"
+
   users:
     new:
       sign_up_fail: "Please check the following information"
