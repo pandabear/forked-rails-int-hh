@@ -37,5 +37,35 @@ class UsersControllerTest < ActionController::TestCase
     end
     
   end
+  
+  context "Managing user's settings" do
+    setup do
+      @user = Factory(:user)
+      login_as(@user)
+      get :edit, id: @user.id
+    end
+    
+    should respond_with(:success)
+    should assign_to(:user).with { @user }
+  end
 
+  context "Changing user's locale" do
+    setup do
+      @user = Factory(:user)
+      login_as(@user)
+      @target_locale = "fi"
+      put :update, id: @user.id, user: { locale: @target_locale }
+    end
+    
+    should respond_with(:redirect)
+    should set_the_flash
+
+    should "update user with new locale" do
+      assert_equal assigns(:user).locale, @target_locale
+    end
+    
+    should "redirect user to edit page" do
+      assert_redirected_to edit_user_path(assigns(:user))
+    end
+  end
 end

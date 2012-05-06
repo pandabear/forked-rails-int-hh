@@ -9,11 +9,14 @@
         <ul class="nav">
           <% if current_user %>
             <li>
-              <%= link_to t('.link_login'), session_path, method: :delete %>
+              <%= link_to t('.link_profile_edit'), edit_user_path(current_user) %>
+            </li>
+            <li>
+              <%= link_to t('.link_logout'), session_path, method: :delete %>
             </li>
           <% else %>
             <li>
-              <%= link_to t('.link_logout'), new_session_path %>
+              <%= link_to t('.link_login'), new_session_path %>
             </li>
             <li>
               <%= link_to t('.link_signup'), new_user_path %>

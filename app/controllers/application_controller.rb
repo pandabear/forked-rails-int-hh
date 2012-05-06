@@ -12,8 +12,10 @@ class ApplicationController < ActionController::Base
 
   def available_locales
     # fi as in emoticon! (DON'T ASK ME WHY!)
-    %w(fi en)
+    locales = %w(fi en)
+    locales.sort
   end
+  helper_method :available_locales
 
   private
   
@@ -27,6 +29,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = request.compatible_language_from(available_locales) || I18n.default_locale
+    if current_user && available_locales.include?(current_user.locale)
+      I18n.locale = current_user.locale
+    else
+      I18n.locale = request.compatible_language_from(available_locales) || I18n.default_locale
+    end
   end
 end

@@ -1,0 +1,25 @@
+<%= form_for user, html: { class: 'form-horizontal' } do |f| %>
+  <% unless user.errors.empty? %>
+    <div class='alert alert-block alert-error'>
+      <h2 class='alert-heading'><%= t('.user_save_failed') %></h2>
+      <% user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="title"><%= t('.locale') %></label>
+      <div class='controls'>
+        <%= f.select :locale, options_for_select(available_locales, user.locale) %>
+      </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='controls'>
+      <%= f.submit t('.save'), class: 'btn-primary' %>
+    </div>
+  </fieldset>
+
+<% end %>

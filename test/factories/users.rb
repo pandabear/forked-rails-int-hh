@@ -9,6 +9,7 @@ FactoryGirl.define do
   factory :user do
     email
     password 'infopass'
+    locale nil
   end
   
 end

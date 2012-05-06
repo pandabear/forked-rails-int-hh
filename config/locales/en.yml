@@ -7,6 +7,8 @@ en:
       no_book_found_by_isbn: "No book found by that ISBN"
       release_book_fail: "Something went wrong"
       login_fail: "Email or password is invalid"
+      update:
+        fail: "There was an error updating your profile."
     notice:
       created_book: "Book created"
       updated_book: "Book saved"
@@ -14,7 +16,8 @@ en:
       reserved_book: "Book reserved"
       released_book: "Book is no longer reserved"
       sign_up_success: "Welcome!"
-
+      update:
+        success: "Profile updated!"
   layouts:
     application:
       title: "Library"
@@ -25,6 +28,7 @@ en:
       link_login: "Log in"
       link_logout: "Log out"
       link_signup: "Sign up"
+      link_profile_edit: "Change settings"
 
   books:
     index:
@@ -95,3 +99,9 @@ en:
       password: "Password:"
       password_repeat: "Password confirmation:"
       submit: "Sign up"
+    edit:
+      edit_profile: "Editing profile"
+    form:
+      user_save_failed: "Error happened while saving"
+      locale: "Locale"
+      save: "Save"

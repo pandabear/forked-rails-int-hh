@@ -15,6 +15,8 @@ fi:
       no_book_found_by_isbn: "(T.T)"
       release_book_fail: "<(_ _)>"
       login_fail: "＜(。_。)＞"
+      update:
+        fail: "m(_ _)m"
     notice:
       created_book: "(≧∇≦)/"
       updated_book: "Ｏ(≧∇≦)Ｏ"
@@ -22,6 +24,8 @@ fi:
       reserved_book: "(☆^O^☆)"
       released_book: "(⊙…⊙ )"
       sign_up_success: "ヾ(＾∇＾)"
+      update:
+        success: "d=(´▽｀)=b"
 
   layouts:
     application:
@@ -33,6 +37,7 @@ fi:
       link_login: "(;´・`)>"
       link_logout: "(；￣Д￣）"
       link_signup: "(*ノ・ω・）"
+      link_profile_edit: "=’①。①’="
 
   books:
     index:
@@ -103,3 +108,9 @@ fi:
       password: "Password:"
       password_repeat: "Password confirmation:"
       submit: "(*-`ω´- )人"
+    edit:
+      edit_profile: "ヾ（*⌒ヮ⌒*）ゞ"
+    form:
+      user_save_failed: " (◎_◎;)"
+      locale: "(^～^;)ゞ"
+      save: "(*-`ω´- )人"
