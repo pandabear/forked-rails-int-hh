@@ -9,7 +9,97 @@ fi:
           attributes:
             title:
               taken:  "(T.T)"
+
+  flash:
+    error:
+      no_book_found_by_isbn: "(T.T)"
+      release_book_fail: "<(_ _)>"
+      login_fail: "＜(。_。)＞"
+    notice:
+      created_book: "(≧∇≦)/"
+      updated_book: "Ｏ(≧∇≦)Ｏ"
+      deleted_book: "(ーー;)"
+      reserved_book: "(☆^O^☆)"
+      released_book: "(⊙…⊙ )"
+      sign_up_success: "ヾ(＾∇＾)"
+
+  layouts:
+    application:
+      title: "┗┃・ ■ ・┃┛"
+
+  application:
+    navbar:
+      link_button: "┗┃・ ■ ・┃┛"
+      link_login: "(;´・`)>"
+      link_logout: "(；￣Д￣）"
+      link_signup: "(*ノ・ω・）"
+
   books:
     index:
       search_button_placeholder: "(^^,)~~"
       search_text: "((((*｡_｡)_"
+      add_book: "V(=^･ω･^=)v"
+    list:
+      no_books_found: " (シ_ _)シ"
+    show:
+      isbn: "(*･∀･)／ ISBN ＼(･∀･*)"
+      tags: "(*･∀･)／ Tags ＼(･∀･*)"
+      new_tag: "（ｖ＾＿＾）ｖ"
+      new_tag_name: "ヽ(^。^)丿"
+      ask_confirmation: "∑(O_O；)"
+      edit: "w(°ｏ°)w"
+      delete: "⊙▂⊙"
+      back_to_list: "(┳◇┳)"
+      reservation: "（*＾ワ＾*）"
+    reservation_status:
+      reservation:
+        status_free: "☆*:.｡. o(≧▽≦)o .｡.:*☆"
+        status_reserved: "ヽ(#`Д´)ﾉ  %{email} ヽ(｀⌒´メ)ノ"
+    reservation_links:
+      reservation:
+        reserve: "(¬､¬)"
+        free: "⊙ω⊙"
+    new:
+      new_book: " (ノ^∇^)"
+      find_by_isbn: "((((*｡_｡)_ ISBN"
+      isbn: "(ﾉ´ｰ`)ﾉ ISBN ヽ(;^o^ヽ)"
+      find: "((((*｡_｡)_"
+    edit:
+      edit: "ヘ(°￢°)ノ %{title}"
+    form:
+      book_save_failed: "/(;-_-)"
+      title: "(;*´Д`)ﾉ Title ~(>_<。)＼"
+      authors: "(ﾉ_ _)ﾉ Authors ﾍ(￣ ￣;ﾍ)"
+      isbn: "（＾▽＾）／ ISBN ＼（＾▽＾）"
+      cover_url: "(*＾▽＾)／ Cover URL"
+      description: "(。^_・)ノ Description"
+      save: "(*-`ω´- )人"
+      cancel: "（=｀〜´=）"
+
+  tags:
+    show:
+      tagged_with: "((((*｡_｡)_ tag %{tag}"
+
+  reservations:
+    form:
+      reservation_create_failed: "（x_x；）"
+      email: "Email:"
+      save: "Save"
+      or: "or"
+      cancel: "Cancel"
+
+  sessions:
+    new:
+      log_in: "ヾ（*⌒ヮ⌒*）ゞ"
+      email: "Email:"
+      password: "Password:"
+      submit: "(*-`ω´- )人"
+
+  users:
+    new:
+      sign_up_fail: " ＼(-___________-;)／"
+      sign_up: "ﾍ(;´Д｀ﾍ)"
+      email: "Email:"
+      password: "Password:"
+      password_repeat: "Password confirmation:"
+      submit: "(*-`ω´- )人"
