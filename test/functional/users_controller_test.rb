@@ -60,12 +60,14 @@ class UsersControllerTest < ActionController::TestCase
     should respond_with(:redirect)
     should set_the_flash
 
+   should("redirect user to edit page") { redirect_to(edit_user_path(@user)) }
+
     should "update user with new locale" do
       assert_equal assigns(:user).locale, @target_locale
     end
     
-    should "redirect user to edit page" do
-      assert_redirected_to edit_user_path(assigns(:user))
-    end
+    #should "redirect user to edit page" do
+    #  assert_redirected_to edit_user_path(assigns(:user))
+    #end
   end
 end

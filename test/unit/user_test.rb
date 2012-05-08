@@ -10,5 +10,23 @@ class UserTest < ActiveSupport::TestCase
     should validate_uniqueness_of :email
     
   end
-  
+
+  context "serializing" do
+
+    setup do
+      @email = 'h@dou.ken'
+      @password = 'mah_password'
+      @user = Factory(:user, email: @email, password_digest: @password)
+    end
+
+    should "serialize email" do
+      assert_match /#{@email}/, @user.to_json
+    end
+
+    should "not serialize password_digest" do
+      assert_no_match /#{@password}/, @user.to_json
+    end
+
+  end
+
 end

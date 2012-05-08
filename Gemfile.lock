@@ -86,6 +86,7 @@ GEM
       rubyzip
       term-ansicolor (~> 1.0.5)
     hike (1.2.1)
+    http_accept_language (1.0.2)
     i18n (0.6.0)
     jasminerice (0.0.8)
       haml
@@ -100,7 +101,10 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.17.2)
+    mocha (0.11.2)
+      metaclass (~> 0.0.1)
     multi_json (1.0.3)
     pg (0.11.0)
     polyglot (0.3.3)
@@ -175,10 +179,12 @@ DEPENDENCIES
   factory_girl_rails
   guard-test
   heroku
+  http_accept_language
   isbn_validator!
   jasminerice
   jquery-rails
   json
+  mocha
   pg
   pjax_rails!
   rails (= 3.1.1)
