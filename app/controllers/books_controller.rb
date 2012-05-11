@@ -2,6 +2,10 @@ class BooksController < ApplicationController
   
   before_filter :find_book, only: [:show, :edit, :update, :destroy]
 
+  caches_page :index
+
+  cache_sweeper :book_sweeper
+
   def index
     @books = Book.all
     respond_to do |format|
@@ -24,7 +28,7 @@ class BooksController < ApplicationController
   end
   
   def show
-    @book_reservation = @book.reservation
+    # @book_reservation = @book.reservation
   end
   
   def new

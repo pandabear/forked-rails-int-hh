@@ -14,7 +14,7 @@ class Reservation < ActiveRecord::Base
                    
   before_validation :make_reserved, :on => :create
   
-  belongs_to :book
+  belongs_to :book, touch: true
   belongs_to :user
   
   def free
