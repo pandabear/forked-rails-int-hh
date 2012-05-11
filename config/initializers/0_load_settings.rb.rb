@@ -1,1 +1,1 @@
-CONFIG = YAML.load_file("#{Rails.root}/config/settings.yml")[Rails.env].symbolize_keys
+CONFIG = (YAML.load_file("#{Rails.root}/config/settings.yml")[Rails.env] rescue{}).merge(ENV).symbolize_keys
